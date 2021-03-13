@@ -147,7 +147,8 @@ $_POST['feld'] = $originalfeld;
 $results['feld'] = $zielfeld;
 
 
-file_exists('vendor/autoload.php' ? require 'vendor/autoload.php': trigger_error("vendor/autoload.php not found"));
+if (file_exists('./vendor/autoload.php')) require './vendor/autoload.php';
+else trigger_error("./vendor/autoload.php not found");
 $oSmarty = new Smarty();
 $oSmarty->template_dir = './/templates/';
 $oSmarty->compile_dir = './templates_c/';
