@@ -1,24 +1,23 @@
 <?php
 
-
-$originalfeld = $_POST['feld'];
-if(is_array($_POST['feld']))
+$originalfeld = $_GET['feld'];
+if(is_array($_GET['feld']))
 {
-	for($y = 0; $y < count($_POST['feld']); $y++)
+	for($y = 0; $y < count($_GET['feld']); $y++)
 	{
-		for($x = 0; $x < count($_POST['feld'][$y]); $x++) if($_POST['feld'][$x][$y] == '') $_POST['feld'][$x][$y] = 0;
+		for($x = 0; $x < count($_GET['feld'][$y]); $x++) if($_GET['feld'][$x][$y] == '') $_GET['feld'][$x][$y] = 0;
 	}
 }
 $vzeilen = array(
-	array($_POST['feld'][0][0], $_POST['feld'][1][0], $_POST['feld'][2][0],   $_POST['feld'][3][0], $_POST['feld'][4][0], $_POST['feld'][5][0],   $_POST['feld'][6][0], $_POST['feld'][7][0], $_POST['feld'][8][0])
-	, array($_POST['feld'][0][1], $_POST['feld'][1][1], $_POST['feld'][2][1],   $_POST['feld'][3][1], $_POST['feld'][4][1], $_POST['feld'][5][1],   $_POST['feld'][6][1], $_POST['feld'][7][1], $_POST['feld'][8][1])
-	, array($_POST['feld'][0][2], $_POST['feld'][1][2], $_POST['feld'][2][2],   $_POST['feld'][3][2], $_POST['feld'][4][2], $_POST['feld'][5][2],   $_POST['feld'][6][0], $_POST['feld'][7][2], $_POST['feld'][8][2])
-	, array($_POST['feld'][0][3], $_POST['feld'][1][3], $_POST['feld'][2][3],   $_POST['feld'][3][3], $_POST['feld'][4][3], $_POST['feld'][5][3],   $_POST['feld'][6][3], $_POST['feld'][7][3], $_POST['feld'][8][3])
-	, array($_POST['feld'][0][4], $_POST['feld'][1][4], $_POST['feld'][2][4],   $_POST['feld'][3][4], $_POST['feld'][4][4], $_POST['feld'][5][4],   $_POST['feld'][6][4], $_POST['feld'][7][4], $_POST['feld'][8][4])
-	, array($_POST['feld'][0][5], $_POST['feld'][1][5], $_POST['feld'][2][5],   $_POST['feld'][3][5], $_POST['feld'][4][5], $_POST['feld'][5][5],   $_POST['feld'][6][5], $_POST['feld'][7][5], $_POST['feld'][8][5])
-	, array($_POST['feld'][0][6], $_POST['feld'][1][6], $_POST['feld'][2][6],   $_POST['feld'][3][6], $_POST['feld'][4][6], $_POST['feld'][5][6],   $_POST['feld'][6][6], $_POST['feld'][7][6], $_POST['feld'][8][6])
-	,  array($_POST['feld'][0][7], $_POST['feld'][1][7], $_POST['feld'][2][7],   $_POST['feld'][3][7], $_POST['feld'][4][7], $_POST['feld'][5][7],   $_POST['feld'][6][7], $_POST['feld'][7][7], $_POST['feld'][8][7])
-	, array($_POST['feld'][0][8], $_POST['feld'][1][8], $_POST['feld'][2][8],   $_POST['feld'][3][8], $_POST['feld'][4][8], $_POST['feld'][5][8],   $_POST['feld'][6][8], $_POST['feld'][7][8], $_POST['feld'][8][8])
+	array($_GET['feld'][0][0], $_GET['feld'][1][0], $_GET['feld'][2][0],   $_GET['feld'][3][0], $_GET['feld'][4][0], $_GET['feld'][5][0],   $_GET['feld'][6][0], $_GET['feld'][7][0], $_GET['feld'][8][0])
+	, array($_GET['feld'][0][1], $_GET['feld'][1][1], $_GET['feld'][2][1],   $_GET['feld'][3][1], $_GET['feld'][4][1], $_GET['feld'][5][1],   $_GET['feld'][6][1], $_GET['feld'][7][1], $_GET['feld'][8][1])
+	, array($_GET['feld'][0][2], $_GET['feld'][1][2], $_GET['feld'][2][2],   $_GET['feld'][3][2], $_GET['feld'][4][2], $_GET['feld'][5][2],   $_GET['feld'][6][0], $_GET['feld'][7][2], $_GET['feld'][8][2])
+	, array($_GET['feld'][0][3], $_GET['feld'][1][3], $_GET['feld'][2][3],   $_GET['feld'][3][3], $_GET['feld'][4][3], $_GET['feld'][5][3],   $_GET['feld'][6][3], $_GET['feld'][7][3], $_GET['feld'][8][3])
+	, array($_GET['feld'][0][4], $_GET['feld'][1][4], $_GET['feld'][2][4],   $_GET['feld'][3][4], $_GET['feld'][4][4], $_GET['feld'][5][4],   $_GET['feld'][6][4], $_GET['feld'][7][4], $_GET['feld'][8][4])
+	, array($_GET['feld'][0][5], $_GET['feld'][1][5], $_GET['feld'][2][5],   $_GET['feld'][3][5], $_GET['feld'][4][5], $_GET['feld'][5][5],   $_GET['feld'][6][5], $_GET['feld'][7][5], $_GET['feld'][8][5])
+	, array($_GET['feld'][0][6], $_GET['feld'][1][6], $_GET['feld'][2][6],   $_GET['feld'][3][6], $_GET['feld'][4][6], $_GET['feld'][5][6],   $_GET['feld'][6][6], $_GET['feld'][7][6], $_GET['feld'][8][6])
+	,  array($_GET['feld'][0][7], $_GET['feld'][1][7], $_GET['feld'][2][7],   $_GET['feld'][3][7], $_GET['feld'][4][7], $_GET['feld'][5][7],   $_GET['feld'][6][7], $_GET['feld'][7][7], $_GET['feld'][8][7])
+	, array($_GET['feld'][0][8], $_GET['feld'][1][8], $_GET['feld'][2][8],   $_GET['feld'][3][8], $_GET['feld'][4][8], $_GET['feld'][5][8],   $_GET['feld'][6][8], $_GET['feld'][7][8], $_GET['feld'][8][8])
 	);
 $vfeld = array(
     array(& $vzeilen[0][0], & $vzeilen[1][0], & $vzeilen[2][0], & $vzeilen[3][0], & $vzeilen[4][0], & $vzeilen[5][0], & $vzeilen[6][0], & $vzeilen[7][0], & $vzeilen[8][0])
@@ -33,17 +32,17 @@ $vfeld = array(
 );
 
 $zeilen = array(
-    array($_POST['feld'][0][0], $_POST['feld'][1][0], $_POST['feld'][2][0],   $_POST['feld'][3][0], $_POST['feld'][4][0], $_POST['feld'][5][0],   $_POST['feld'][6][0], $_POST['feld'][7][0], $_POST['feld'][8][0])
-	, array($_POST['feld'][0][1], $_POST['feld'][1][1], $_POST['feld'][2][1],   $_POST['feld'][3][1], $_POST['feld'][4][1], $_POST['feld'][5][1],   $_POST['feld'][6][1], $_POST['feld'][7][1], $_POST['feld'][8][1])
-	, array($_POST['feld'][0][2], $_POST['feld'][1][2], $_POST['feld'][2][2],   $_POST['feld'][3][2], $_POST['feld'][4][2], $_POST['feld'][5][2],   $_POST['feld'][6][0], $_POST['feld'][7][2], $_POST['feld'][8][2])
+    array($_GET['feld'][0][0], $_GET['feld'][1][0], $_GET['feld'][2][0],   $_GET['feld'][3][0], $_GET['feld'][4][0], $_GET['feld'][5][0],   $_GET['feld'][6][0], $_GET['feld'][7][0], $_GET['feld'][8][0])
+	, array($_GET['feld'][0][1], $_GET['feld'][1][1], $_GET['feld'][2][1],   $_GET['feld'][3][1], $_GET['feld'][4][1], $_GET['feld'][5][1],   $_GET['feld'][6][1], $_GET['feld'][7][1], $_GET['feld'][8][1])
+	, array($_GET['feld'][0][2], $_GET['feld'][1][2], $_GET['feld'][2][2],   $_GET['feld'][3][2], $_GET['feld'][4][2], $_GET['feld'][5][2],   $_GET['feld'][6][0], $_GET['feld'][7][2], $_GET['feld'][8][2])
 
-    , array($_POST['feld'][0][3], $_POST['feld'][1][3], $_POST['feld'][2][3],   $_POST['feld'][3][3], $_POST['feld'][4][3], $_POST['feld'][5][3],   $_POST['feld'][6][3], $_POST['feld'][7][3], $_POST['feld'][8][3])
-	, array($_POST['feld'][0][4], $_POST['feld'][1][4], $_POST['feld'][2][4],   $_POST['feld'][3][4], $_POST['feld'][4][4], $_POST['feld'][5][4],   $_POST['feld'][6][4], $_POST['feld'][7][4], $_POST['feld'][8][4])
-	, array($_POST['feld'][0][5], $_POST['feld'][1][5], $_POST['feld'][2][5],   $_POST['feld'][3][5], $_POST['feld'][4][5], $_POST['feld'][5][5],   $_POST['feld'][6][5], $_POST['feld'][7][5], $_POST['feld'][8][5])
+    , array($_GET['feld'][0][3], $_GET['feld'][1][3], $_GET['feld'][2][3],   $_GET['feld'][3][3], $_GET['feld'][4][3], $_GET['feld'][5][3],   $_GET['feld'][6][3], $_GET['feld'][7][3], $_GET['feld'][8][3])
+	, array($_GET['feld'][0][4], $_GET['feld'][1][4], $_GET['feld'][2][4],   $_GET['feld'][3][4], $_GET['feld'][4][4], $_GET['feld'][5][4],   $_GET['feld'][6][4], $_GET['feld'][7][4], $_GET['feld'][8][4])
+	, array($_GET['feld'][0][5], $_GET['feld'][1][5], $_GET['feld'][2][5],   $_GET['feld'][3][5], $_GET['feld'][4][5], $_GET['feld'][5][5],   $_GET['feld'][6][5], $_GET['feld'][7][5], $_GET['feld'][8][5])
 
-    , array($_POST['feld'][0][6], $_POST['feld'][1][6], $_POST['feld'][2][6],   $_POST['feld'][3][6], $_POST['feld'][4][6], $_POST['feld'][5][6],   $_POST['feld'][6][6], $_POST['feld'][7][6], $_POST['feld'][8][6])
-	, array($_POST['feld'][0][7], $_POST['feld'][1][7], $_POST['feld'][2][7],   $_POST['feld'][3][7], $_POST['feld'][4][7], $_POST['feld'][5][7],   $_POST['feld'][6][7], $_POST['feld'][7][7], $_POST['feld'][8][7])
-	, array($_POST['feld'][0][8], $_POST['feld'][1][8], $_POST['feld'][2][8],   $_POST['feld'][3][8], $_POST['feld'][4][8], $_POST['feld'][5][8],   $_POST['feld'][6][8], $_POST['feld'][7][8], $_POST['feld'][8][8])
+    , array($_GET['feld'][0][6], $_GET['feld'][1][6], $_GET['feld'][2][6],   $_GET['feld'][3][6], $_GET['feld'][4][6], $_GET['feld'][5][6],   $_GET['feld'][6][6], $_GET['feld'][7][6], $_GET['feld'][8][6])
+	, array($_GET['feld'][0][7], $_GET['feld'][1][7], $_GET['feld'][2][7],   $_GET['feld'][3][7], $_GET['feld'][4][7], $_GET['feld'][5][7],   $_GET['feld'][6][7], $_GET['feld'][7][7], $_GET['feld'][8][7])
+	, array($_GET['feld'][0][8], $_GET['feld'][1][8], $_GET['feld'][2][8],   $_GET['feld'][3][8], $_GET['feld'][4][8], $_GET['feld'][5][8],   $_GET['feld'][6][8], $_GET['feld'][7][8], $_GET['feld'][8][8])
 );
 
 $zielfeld = array(
@@ -142,18 +141,22 @@ for($y = 0; $y < 9; $y++)
 		}
 	}
 }
-$_POST['feld'] = $originalfeld;
+$_GET['feld'] = $originalfeld;
 
 $results['feld'] = $zielfeld;
 
+if(isset($_GET['api']) && $_GET['api'] == 1)
+{
+    echo json_encode($results);die();
+}
 
 if (file_exists('./vendor/autoload.php')) require './vendor/autoload.php';
 else trigger_error("./vendor/autoload.php not found");
 $oSmarty = new Smarty();
 $oSmarty->template_dir = './/templates/';
 $oSmarty->compile_dir = './templates_c/';
-$oSmarty->assign('POST', $_POST);
-$oSmarty->assign('UM', $_SET['UM']);
+
+$oSmarty->assign('GET', $_GET);
 if(isset($results)) $oSmarty->assign('results', $results);
 echo (microtime());
 $oSmarty->display('index.tpl.html');
