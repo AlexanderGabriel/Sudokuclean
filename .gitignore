@@ -1,3 +1,8 @@
+favicon.ico
+/stats/
+/error/
+robots.txt
+
 composer.phar
 /vendor/
 /web/
