@@ -1,3 +1,4 @@
 composer.phar
 /vendor/
 /web/
+/templates_c/*.php
