@@ -11,4 +11,6 @@ For everyone, interrested, in how i did this, here is my (not beautiful) code.
 I cleaned up a little bit, get smarty with composer now because i can.
 I also changed method of the form to GET and added a flag ?API=1 to give back json. This should enable usage from any other program :)
 
+You can test it here: https://sudokuclean.digital-infinity.de/
+
 Have Fun, reading.
